@@ -30,6 +30,9 @@ workbook.xlsx.readFile(filePathreading).then(() => {
     
  
     data = data.filter(data => data[column_condition] > 8.5)
+    data = data.filter(data => data["Học lực"] == 'Giỏi' ||  data["Học lực"] == 'Tốt' )
+    data = data.filter(data =>  data["Hạnh kiểm"] == 'Tốt' )
+
     data = data.sort(function(a, b)  {
       return - a[column_condition] + b[column_condition]
     })
