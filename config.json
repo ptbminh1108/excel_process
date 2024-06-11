@@ -1,0 +1,17 @@
+{
+  "sheets" :
+  [
+    {
+      "sheet_name": "12t" ,
+      "column_condition" : "Toán"
+    },
+    {
+      "sheet_name": "12i" ,
+      "column_condition" : "Tin"
+    },
+    {
+      "sheet_name": "12l" ,
+      "column_condition" : "Lí"
+    }
+  ]
+}
