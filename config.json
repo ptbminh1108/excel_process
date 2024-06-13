@@ -12,6 +12,46 @@
     {
       "sheet_name": "12l" ,
       "column_condition" : "Lí"
+    },
+    {
+      "sheet_name": "12h" ,
+      "column_condition" : "Toán"
+    },
+    {
+      "sheet_name": "12s" ,
+      "column_condition" : "Tin"
+    },
+    {
+      "sheet_name": "12v" ,
+      "column_condition" : "Lí"
+    },
+    {
+      "sheet_name": "12a" ,
+      "column_condition" : "Toán"
+    },
+    {
+      "sheet_name": "12a1" ,
+      "column_condition" : "Tin"
+    },
+    {
+      "sheet_name": "12u" ,
+      "column_condition" : "Lí"
+    },
+    {
+      "sheet_name": "12d" ,
+      "column_condition" : "Toán"
+    },
+    {
+      "sheet_name": "12c1" ,
+      "column_condition" : "Tin"
+    },
+    {
+      "sheet_name": "12c2" ,
+      "column_condition" : "Lí"
+    },
+    {
+      "sheet_name": "12c3" ,
+      "column_condition" : "Toán"
     }
   ]
 }
