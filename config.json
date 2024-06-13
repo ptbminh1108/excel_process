@@ -1,3 +1,4 @@
+
 {
   "sheets" :
   [
@@ -15,31 +16,111 @@
     },
     {
       "sheet_name": "12h" ,
-      "column_condition" : "Toán"
+      "column_condition" : "Hóa"
     },
     {
       "sheet_name": "12s" ,
-      "column_condition" : "Tin"
+      "column_condition" : "Sinh"
     },
     {
       "sheet_name": "12v" ,
-      "column_condition" : "Lí"
+      "column_condition" : "Văn"
     },
     {
       "sheet_name": "12a" ,
-      "column_condition" : "Toán"
+      "column_condition" : "Ng.ngữ"
     },
     {
       "sheet_name": "12a1" ,
-      "column_condition" : "Tin"
+      "column_condition" : "Ng.ngữ"
     },
     {
       "sheet_name": "12u" ,
-      "column_condition" : "Lí"
+      "column_condition" : "Sử"
     },
     {
       "sheet_name": "12d" ,
+      "column_condition" : "Địa"
+    },
+    {
+      "sheet_name": "11t" ,
       "column_condition" : "Toán"
+    },
+    {
+      "sheet_name": "11i" ,
+      "column_condition" : "Tin"
+    },
+    {
+      "sheet_name": "11l" ,
+      "column_condition" : "Lí"
+    },
+    {
+      "sheet_name": "11h" ,
+      "column_condition" : "Hóa"
+    },
+    {
+      "sheet_name": "11s" ,
+      "column_condition" : "Sinh"
+    },
+    {
+      "sheet_name": "11v" ,
+      "column_condition" : "Văn"
+    },
+    {
+      "sheet_name": "11a1" ,
+      "column_condition" : "Ng.ngữ"
+    },
+    {
+      "sheet_name": "11a2" ,
+      "column_condition" : "Ng.ngữ"
+    },
+    {
+      "sheet_name": "11u" ,
+      "column_condition" : "Sử"
+    },
+    {
+      "sheet_name": "11d" ,
+      "column_condition" : "Địa"
+    },
+    {
+      "sheet_name": "10t" ,
+      "column_condition" : "Toán"
+    },
+    {
+      "sheet_name": "10i" ,
+      "column_condition" : "Tin"
+    },
+    {
+      "sheet_name": "10l" ,
+      "column_condition" : "Lí"
+    },
+    {
+      "sheet_name": "10h" ,
+      "column_condition" : "Hóa"
+    },
+    {
+      "sheet_name": "10s" ,
+      "column_condition" : "Sinh"
+    },
+    {
+      "sheet_name": "10v" ,
+      "column_condition" : "Văn"
+    },
+    {
+      "sheet_name": "10a1" ,
+      "column_condition" : "Ng.ngữ"
+    },
+    {
+      "sheet_name": "10a2" ,
+      "column_condition" : "Ng.ngữ"
+    },
+    {
+      "sheet_name": "10u" ,
+      "column_condition" : "Sử"
+    },
+    {
+      "sheet_name": "10d" ,
+      "column_condition" : "Địa"
     }
   ]
 }

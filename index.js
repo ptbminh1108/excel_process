@@ -2,7 +2,7 @@ const Excel = require("exceljs");
 const workbook = new Excel.Workbook();
 const workbook_write = new Excel.Workbook();
 const filePathreading = `xl.xlsx`
-const filepathwriting = `bangdiemfilter.xlsx`
+const filepathwriting = `export.xlsx`
 
 var CONFIG = require('./config.json');
 // console.log(CONFIG);
@@ -21,6 +21,7 @@ workbook.xlsx.readFile(filePathreading).then(() => {
   let excel_data = [];
   let list_worksheets = getListWorkSheet(workbook)
 
+
   // Validate worksheet in config
   let checkHasWorksheet_inConfig = true;
   list_worksheets.forEach(worksheet =>{
@@ -35,32 +36,37 @@ workbook.xlsx.readFile(filePathreading).then(() => {
     return;
   }
 
-  let columns = getColumnName( workbook.getWorksheet(list_worksheets[0]))
 
   list_worksheets.forEach( sheet =>{
+    let columns = getColumnName( workbook.getWorksheet(sheet))
+
     let worksheet = workbook.getWorksheet(sheet);
     let data = getData(worksheet,columns);
 
     let column_condition = CONFIG.sheets.find( sheet_item => sheet_item.sheet_name == sheet ).column_condition;
     
  
-    data = data.filter(data => data[column_condition] > 8.5)
+    data = data.filter(data => data[column_condition] >= 8.5)
 
     // if( data[0]["Học Lực"] )
     // For 12 grade
-    if(typeof data[0]["Học lực"] == 'string' && typeof data[0]["Hạnh kiểm"]  == 'string' )
-    {
-      data = data.filter(data => data["Học lực"] == 'Giỏi' ||  data["Học lực"] == 'Tốt' )
-      data = data.filter(data =>  data["Hạnh kiểm"] == 'Tốt' )
-    }
 
-    // For 11 & 10 grade
-    if(typeof data[0]["Kết quả học tập"] == 'string' && typeof data[0]["Kết quả rèn luyện"]  == 'string' )
-    {
-      data = data.filter(data => data["Kết quả học tập"] == 'Giỏi' ||  data["Kết quả học tập"] == 'Tốt' )
-      data = data.filter(data =>  data["Kết quả rèn luyện"] == 'Tốt' )
+    if( data.length > 0){
+      if(typeof data[0]["Học lực"] == 'string' && typeof data[0]["Hạnh kiểm"]  == 'string' )
+        {
+          data = data.filter(data => data["Học lực"] == 'Giỏi' ||  data["Học lực"] == 'Tốt' )
+          data = data.filter(data =>  data["Hạnh kiểm"] == 'Tốt' )
+        }
+    
+        // For 11 & 10 grade
+        if(typeof data[0]["Kết quả học tập"] == 'string' && typeof data[0]["Kết quả rèn luyện"]  == 'string' )
+        {
+         
+          data = data.filter(data => data["Kết quả học tập"] == 'Giỏi' ||  data["Kết quả học tập"] == 'Tốt' )
+          data = data.filter(data =>  data["Kết quả rèn luyện"] == 'Tốt' )
+         
+        }
     }
-   
  
     data = data.sort(function(a, b)  {
       return - a[column_condition] + b[column_condition]
@@ -68,6 +74,7 @@ workbook.xlsx.readFile(filePathreading).then(() => {
 
 
     excel_data.push({
+      column: columns,
       sheet_name:sheet,
       data:data,
     })
@@ -77,6 +84,7 @@ workbook.xlsx.readFile(filePathreading).then(() => {
     excel_data.forEach(sheet =>{
       const worksheet = workbook_write.addWorksheet(sheet.sheet_name, {
       });
+      columns = sheet.column
       worksheet.addRow(columns) 
       sheet.data.forEach(data=>{
         let row = [];
@@ -110,7 +118,6 @@ function getListWorkSheet(workbook){
     // console.log("Sheet name---", sheet.name)
     list_worksheets.push(sheet.name)
   })
-  console.log(list_worksheets);
   return list_worksheets;
 }
 
