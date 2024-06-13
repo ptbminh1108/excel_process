@@ -20,6 +20,21 @@ workbook.xlsx.readFile(filePathreading).then(() => {
 
   let excel_data = [];
   let list_worksheets = getListWorkSheet(workbook)
+
+  // Validate worksheet in config
+  let checkHasWorksheet_inConfig = true;
+  list_worksheets.forEach(worksheet =>{
+    if(!CONFIG.sheets.find( sheet_item => sheet_item.sheet_name == worksheet )){
+      checkHasWorksheet_inConfig = false; 
+      console.log("Worksheet " + worksheet + " not found in CONFIG");
+    }
+  })
+
+  if(!checkHasWorksheet_inConfig){
+    console.log("Please check CONFIG file again!");
+    return;
+  }
+
   let columns = getColumnName( workbook.getWorksheet(list_worksheets[0]))
 
   list_worksheets.forEach( sheet =>{

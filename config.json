@@ -40,18 +40,6 @@
     {
       "sheet_name": "12d" ,
       "column_condition" : "Toán"
-    },
-    {
-      "sheet_name": "12c1" ,
-      "column_condition" : "Tin"
-    },
-    {
-      "sheet_name": "12c2" ,
-      "column_condition" : "Lí"
-    },
-    {
-      "sheet_name": "12c3" ,
-      "column_condition" : "Toán"
     }
   ]
 }
